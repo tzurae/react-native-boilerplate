@@ -3,12 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios-dev": "ENVFILE=.env.dev react-native run-ios",
+    "ios-staging": "ENVFILE=.env.staging react-native run-ios",
+    "ios-prod": "ENVFILE=.env.prod react-native run-ios",
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/md_mobile/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'",
+    "android-dev": "ENVFILE=.env.dev react-native run-android",
+    "android-staging": "ENVFILE=.env.staging react-native run-android",
+    "android-prod": "ENVFILE=.env.production react-native run-android",
+    "build-android-prod": "export ENVFILE=.env.prod && cd android && ./gradlew assembleRelease",
     "test": "jest"
   },
   "dependencies": {
     "react": "16.5.0",
-    "react-native": "0.57.0"
+    "react-native": "0.57.0",
+    "react-native-config": "^0.11.5"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
