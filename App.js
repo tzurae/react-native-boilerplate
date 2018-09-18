@@ -33,12 +33,15 @@ export default class App extends Component<Props> {
   }
 }
 
+const backgroundColor = '#F5FCFF';
+const instructionsColor = '#333333';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: backgroundColor,
   },
   welcome: {
     fontSize: 20,
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: instructionsColor,
     marginBottom: 5,
   },
 });
