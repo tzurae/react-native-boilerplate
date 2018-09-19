@@ -12,12 +12,17 @@
     "android-prod": "ENVFILE=.env.production react-native run-android",
     "build-android-prod": "export ENVFILE=.env.prod && cd android && ./gradlew assembleRelease",
     "test": "jest --verbose",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "rndebugger-open"
   },
   "dependencies": {
     "react": "16.5.0",
     "react-native": "0.57.0",
-    "react-native-config": "^0.11.5"
+    "react-native-config": "^0.11.5",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.6.1",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "babel-eslint": "8",
@@ -28,6 +33,7 @@
     "husky": "^1.0.0-rc.14",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.45.3",
+    "react-native-debugger-open": "^0.3.17",
     "react-test-renderer": "16.5.0"
   },
   "jest": {
