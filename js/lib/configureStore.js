@@ -1,22 +1,30 @@
-// @flow
 import { applyMiddleware, createStore, compose } from 'redux';
-import { createLogger } from 'redux-logger';
+import { createEpicMiddleware } from 'redux-observable';
 import rootReducer from './rootReducer';
+import rootEpics from './rootEpics';
+import Config from 'react-native-config';
 
-const logger = createLogger({
-  predicate: () => __DEV__,
-  collapsed: true,
-  duration: true
-});
+const epicMiddleware = createEpicMiddleware();
 
-const enhancers = [applyMiddleware(logger)];
+const middlewares = [
+  epicMiddleware,
+];
+
+if (Config.ENV === 'DEV') {
+  const { createLogger } = require('redux-logger');
+  middlewares.push(createLogger({
+    collapsed: true,
+    duration: true
+  }))
+}
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const enhancer = composeEnhancers(...enhancers);
-
 const configureStore = () => {
-  const store = createStore(rootReducer, undefined, enhancer);
+  const createStoreWithMiddleware = composeEnhancers(applyMiddleware(...middlewares))(createStore);
+
+  epicMiddleware.run(rootEpics);
+
+  const store = createStoreWithMiddleware(rootReducer, undefined);
   return store;
 };
 

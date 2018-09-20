@@ -16,13 +16,17 @@
     "postinstall": "rndebugger-open"
   },
   "dependencies": {
+    "immutability-helper": "^2.8.1",
+    "normalizr": "^3.2.4",
     "react": "16.5.0",
     "react-native": "0.57.0",
     "react-native-config": "^0.11.5",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-observable": "^1.0.0",
+    "rxjs": "^6.3.2"
   },
   "devDependencies": {
     "babel-eslint": "8",
