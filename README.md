@@ -101,5 +101,6 @@ such as: `.babelrc` `.eslintrc` ..etc.
 |husky             | git hook made easy |
 |react-native-debugger| good tool for debugging |
 |axios             | a tool which is promise based http client|
+|babel-plugin-transform-remove-console|This will automatically remove all console.* calls in the release (production) versions of your project|
 
 
