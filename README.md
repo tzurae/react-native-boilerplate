@@ -81,7 +81,8 @@ such as: `.babelrc` `.eslintrc` ..etc.
 |    |    |    |---  society         # just examply, A screen might be divided into a small amount subscreens which have own
 |    |    |    └ ...etc             # business logic
 |    |    └ ... etc
-|    └--- navigations               # all the routes of project                    
+|    |--- navigations               # all the routes of project                    
+|    |--- constants                 # manage all constants of project
 ```
 
 ## Technologies we use
